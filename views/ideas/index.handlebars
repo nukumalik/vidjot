@@ -1,0 +1,19 @@
+{{#each success}}
+<div class="alert alert-success">{{text}}</div>
+{{else}}
+
+{{/each}}
+
+{{#each ideas}}
+<div class="card card-body">
+	<h3>{{title}}</h3>
+	<p>{{detail}}</p>
+	<a href="/ideas/edit/{{_id}}" class="btn btn-sm btn-warning mb-2">Edit</a>
+	<form action="/ideas/{{_id}}" method="post">
+		<input type="hidden" name="_method" value="DELETE">
+		<input type="submit" value="Delete" class="btn btn-sm btn-danger w-100">
+	</form>
+</div>
+{{else}}
+<div class="alert alert-warning">No Ideas Found</div>
+{{/each}}

@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+	<div class="container">
+		<a class="navbar-brand" href="/">Vidjot</a>
+		<button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+			aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+		<div class="collapse navbar-collapse" id="collapsibleNavId">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="/">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/about">About</a>
+				</li>
+			</ul>
+			<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+				{{#if user}}
+				<li class="nav-item dropdown">
+					<a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" id="ideaDropdown">Video Ideas</a>
+					<div class="dropdown-menu mt-3">
+						<a href="/ideas" class="dropdown-item">Ideas</a>
+						<a href="/ideas/add" class="dropdown-item">Add Idea</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link btn btn-sm btn-dark" href="/logout">Logout</a>
+				</li>
+				{{else}}
+				<li class="nav-item">
+					<a class="nav-link btn btn-sm btn-dark mr-2" href="/login">Login</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link btn btn-sm btn-success" href="/register">Register</a>
+				</li>
+				{{/if}}
+			</ul>
+		</div>
+	</div>
+</nav>
